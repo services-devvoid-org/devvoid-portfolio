@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base theme colors */
+:root {
+  --scrollbar-bg: #262223;
+  --scrollbar-thumb: rgba(221, 198, 182, 0.3);
+  --scrollbar-thumb-hover: rgba(221, 198, 182, 0.5);
+}
+
+/* Light theme colors */
+[data-theme="light"] {
+  --scrollbar-bg: #ddc6b6;
+  --scrollbar-thumb: rgba(38, 34, 35, 0.3);
+  --scrollbar-thumb-hover: rgba(38, 34, 35, 0.5);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-bg);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 6px;
+  border: 3px solid var(--scrollbar-bg);
+  transition: background-color 0.5s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-bg);
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Smooth transitions for theme changes */
+* {
+  transition:
+    background-color 0.5s ease,
+    color 0.5s ease,
+    border-color 0.5s ease;
+}
