@@ -33,7 +33,7 @@ export function Hero({ textColor, bgColor, heroY }: HeroProps) {
         >
           <div className="flex items-center justify-center gap-4 mb-6">
             <motion.img
-              src={`/devvoid-${textColor === "#ddc6b6" ? "dark" : "light"}.png`}
+              src={`./devvoid-${textColor === "#ddc6b6" ? "dark" : "light"}.png`}
               alt="DevVoid Logo"
               className="w-32 h-32 transition-all duration-700 rounded-full"
               whileHover={{ scale: 1.05, rotate: 5 }}

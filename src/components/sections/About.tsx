@@ -85,7 +85,7 @@ export function About({ textColor, aboutOpacity }: AboutProps) {
             >
               <div className="aspect-square rounded-2xl overflow-hidden shadow-xl">
                 <img
-                  src="/founder.jpg"
+                  src="./founder.jpg"
                   alt="Aneesh Bhat - Founder of DevVoid"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
