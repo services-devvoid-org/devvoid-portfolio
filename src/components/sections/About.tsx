@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { containerVariants, itemVariants } from "@/utils/animations";
 import { useRef } from "react";
+import { useTheme } from "@/contexts/theme-context";
 
 interface AboutProps {
   textColor: string;
@@ -9,6 +10,8 @@ interface AboutProps {
 
 export function About({ textColor, aboutOpacity }: AboutProps) {
   const aboutRef = useRef(null);
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
 
   return (
     <motion.section
@@ -83,16 +86,24 @@ export function About({ textColor, aboutOpacity }: AboutProps) {
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="aspect-square rounded-2xl overflow-hidden shadow-xl">
+              <div
+                className="aspect-square rounded-2xl overflow-hidden relative"
+                style={{
+                  backgroundColor: isDark ? `${textColor}15` : `${textColor}20`,
+                }}
+              >
                 <img
-                  src="./founder.jpg"
+                  src="./founder.png"
                   alt="Aneesh Bhat - Founder of DevVoid"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 scale-105 relative z-10"
+                  style={{
+                    objectPosition: "center 20%",
+                  }}
                 />
                 <motion.div
-                  className="absolute inset-0 transition-opacity duration-300"
+                  className="absolute inset-0 z-20 transition-opacity duration-300"
                   style={{
-                    background: `linear-gradient(45deg, ${textColor}10, transparent)`,
+                    background: `linear-gradient(45deg, ${textColor}15, transparent)`,
                   }}
                   whileHover={{ opacity: 0.8 }}
                 />
