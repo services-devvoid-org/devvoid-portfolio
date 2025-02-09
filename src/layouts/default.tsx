@@ -42,7 +42,7 @@ export default function DefaultLayout({
             className="flex items-center gap-2 transition-colors duration-300"
             style={{ color: `${textColor}80` }}
           >
-            <span>© 2025 DevVoid. All rights reserved.</span>
+            <span>© 2024 DevVoid. All rights reserved.</span>
           </div>
           {/* <div className="flex items-center gap-4 text-sm">
             {["Privacy Policy", "Terms of Service", "Contact"].map((item) => (
